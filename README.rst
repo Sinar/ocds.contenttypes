@@ -6,34 +6,39 @@
 ocds.contenttypes
 =================
 
-Tell me what your product does
+Open Contracting Data Standard Compliant Plone content types.
+
+This add-on is for tracking procurements and contracts, and uses
+popolo.contenttypes to provide links and info on persons and
+orgnizations for transparency and reporting purposes.
+
+It is not meant to be a complete implementation of OCDS, but will be
+able to export OCDS compliant data.
 
 Features
 --------
 
-- Can be bullet points
-
+- OCDS Relesae with Parties linked to popolo.contenttypes
+- OCDS Planning, Tender, Bids, Award, Contract, Implementation and
+  Amendment content types at basic level.
 
 Examples
 --------
 
 This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+- https://politikus.sinarproject.org
+- https://hivos.sinarproject.org
 
 
 Documentation
 -------------
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
+TODO
 
 Translations
 ------------
 
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
-
+TODO
 
 Installation
 ------------
@@ -56,15 +61,13 @@ Contribute
 
 - Issue Tracker: https://github.com/collective/ocds.contenttypes/issues
 - Source Code: https://github.com/collective/ocds.contenttypes
-- Documentation: https://docs.plone.org/foo/bar
+- Documentation: TODO
 
 
 Support
 -------
 
 If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
-
 
 License
 -------
