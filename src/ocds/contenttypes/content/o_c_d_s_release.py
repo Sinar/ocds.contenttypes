@@ -215,6 +215,7 @@ class IOCDSRelease(model.Schema):
                 'buyer',
                 'procuringEntity',
                 'suppliers',
+                'tenderers',
                 'funders',
                 'reviewBody',
                 'interestedParties',

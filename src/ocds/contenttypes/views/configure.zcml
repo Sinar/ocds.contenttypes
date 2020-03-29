@@ -8,7 +8,7 @@
 
   <browser:page
     name="ocds-release-view"
-    for="Products.CMFCore.interfaces.IFolderish"
+    for="ocds.contenttypes.content.o_c_d_s_release.IOCDSRelease"
     class=".o_c_d_s_release_view.OCDSReleaseView"
     template="ocds-release-view.pt"
     permission="zope2.View"

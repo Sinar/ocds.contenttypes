@@ -5,9 +5,142 @@
       i18n:domain="ocds.contenttypes"
       metal:use-macro="context/main_template/macros/master">
 <body>
-  <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
-  </metal:block>
+
+    <metal:main fill-slot="main">
+        <tal:main-macro metal:define-macro="main">
+
+            <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+                <h2 class="documentFirstHeading"
+                    tal:content="context/title">
+                    
+                </h2>
+            
+            <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+            <h3 tal:content="context/description"></h3>
+
+            <p class="documentDescription" tal:content="context/description"></p>
+
+            <div tal:replace="structure provider:plone.abovecontentbody" />
+
+            <h3>Notes</h3>
+            <p tal:content="structure view/w/notes/render" />
+
+            <h3>Parties</h3>
+
+            <dl tal:condition="context/buyer">
+                <dt>
+                Buyer:
+                <a href="" tal:attributes="href
+                   context/buyer/to_object/absolute_url"
+                   tal:content="context/buyer/to_object/title">
+                </a>
+                <dd tal:content="context/buyer/to_object/description"
+                    />
+                </dt>
+            </dl>
+
+            <dl tal:condition="context/procuringEntity">
+                <dt>
+                Procuring Entity:
+                <a href="" tal:attributes="href
+                   context/procuringEntity/to_object/absolute_url"
+                   tal:content="context/procuringEntity/to_object/title">
+                </a>
+                <dd tal:content="context/procuringEntity/to_object/description"
+                    />
+                </dt>
+            </dl>
+
+
+            <dl tal:condition="context/suppliers"
+                tal:repeat="supplier context/suppliers">
+                <dt>
+                Supplier:
+                <a href="" tal:attributes="href
+                   supplier/to_object/absolute_url"
+                   tal:content="supplier/to_object/title">
+                </a>
+                <dd tal:content="supplier/to_object/description"
+                    />
+                </dt>
+            </dl>
+
+            <dl tal:condition="context/tenderers"
+                tal:repeat="tenderer context/suppliers">
+                <dt>
+                Tenderer:
+                <a href="" tal:attributes="href
+                   tenderer/to_object/absolute_url"
+                   tal:content="tenderer/to_object/title">
+                </a>
+                <dd tal:content="tenderer/to_object/description"
+                    />
+                </dt>
+            </dl>
+
+            <dl tal:condition="context/funders"
+                tal:repeat="funder context/funders">
+                <dt>
+                Funder:
+                <a href="" tal:attributes="href
+                   funder/to_object/absolute_url"
+                   tal:content="funder/to_object/title">
+                </a>
+                <dd tal:content="funder/to_object/description"
+                    />
+                </dt>
+            </dl>
+
+            <dl tal:condition="context/reviewBody">
+                <dt>
+                Review Body:
+                <a href="" tal:attributes="href
+                   context/reviewBody/to_object/absolute_url"
+                   tal:content="context/reviewBody/to_object/title">
+                </a>
+                <dd tal:content="context/reviewBody/to_object/description"
+                    />
+                </dt>
+            </dl>
+
+
+
+            <dl tal:condition="context/interestedParties"
+                tal:repeat="interestedParty context/interestedParties">
+                <dt>
+                Interested Party
+                <a href="" tal:attributes="href
+                   interestedParty/to_object/absolute_url"
+                   tal:content="interestedParty/to_object/title">
+                </a>
+                <dd tal:content="interestedParty/to_object/description"
+                    />
+                </dt>
+            </dl>
+
+
+
+            
+            <hr />
+
+            <h3>Other Details</h3>
+
+            <ul tal:repeat="item context/listFolderContents">
+                <li>
+                    <a href=""
+                     tal:attributes="href item/getURL|item/absolute_url">
+                    <span tal:replace="item/title"/></a> (<span
+                        tal:replace="item/portal_type" />)
+                </li>
+            </ul>
+
+            <div tal:replace="structure provider:plone.belowcontentbody" />
+
+        </tal:main-macro>
+    </metal:main>
+
+
 </body>
 </html>
