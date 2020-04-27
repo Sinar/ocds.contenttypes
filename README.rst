@@ -21,6 +21,7 @@ Features
 - OCDS Relesae with Parties linked to popolo.contenttypes
 - OCDS Planning, Tender, Bids, Award, Contract, Implementation and
   Amendment content types at basic level.
+- OC4IDS Infrastructure Project Tracking
 
 Examples
 --------
@@ -73,3 +74,13 @@ License
 -------
 
 The project is licensed under the GPLv2.
+
+Credits
+-------
+
+This project is supported by Hivos East Africa, Nation Media Group.
+Indirectly via IDRC, Alternatives, (Montreal) and the kind individual
+contributors to Sinar Project.
+
+Also this project would not be possible without the contributors to
+the Open Contracting Data Standard
