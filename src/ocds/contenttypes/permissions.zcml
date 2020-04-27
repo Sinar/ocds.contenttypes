@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="ocds.contenttypes.AddContractingProcess"
+        title="ocds.contenttypes: Add ContractingProcess"
+    />
+
+
+    <permission
         id="ocds.contenttypes.AddInfrastructureProject"
         title="ocds.contenttypes: Add InfrastructureProject"
     />
