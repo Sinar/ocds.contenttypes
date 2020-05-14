@@ -70,6 +70,12 @@ class IInfrastructureProject(model.Schema):
 
     # project_type
 
+    project_type = schema.Choice(
+        title=_(u'Project Type'),
+        required=False,
+        vocabulary='ocds.contenttypes.projecttypes',
+        )
+
     # AssetLifeTime
     # assetLifeTime_start_date
     # assetLifeTime_end_date
@@ -79,14 +85,30 @@ class IInfrastructureProject(model.Schema):
     # locations
 
     # budget
+
+    budget_amount = schema.Decimal(
+            title=_(u'Budget Amount'),
+            description=_(u'''
+            The projected costs or allocated budget for
+            the project'''),
+            required=False,
+            )
+
     # budget_currency
-    # budget_amount
+    # budget_breakdown
    
 
     # Parties
+    # Implemented as a Behaviour 
 
-    
-    
+    #completion_endDate
+    #completion_endDateDetails
+
+    completion_finalValue_amount = schema.Decimal(
+            title=_(u'Final Value'),
+            description=_(u'The total cost of this project at completion.'),
+            required=False,
+            )
 
     # directives.widget(level=RadioFieldWidget)
     # level = schema.Choice(

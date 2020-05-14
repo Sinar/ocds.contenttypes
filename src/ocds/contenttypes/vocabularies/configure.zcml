@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="ocds.contenttypes">
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <utility
+        component=".project_types.ProjectTypesFactory"
+        name="ocds.contenttypes.ProjectTypes"
+    />
+
+
+</configure>
