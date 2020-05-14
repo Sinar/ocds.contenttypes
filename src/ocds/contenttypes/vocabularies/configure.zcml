@@ -6,7 +6,7 @@
 
     <utility
         component=".project_types.ProjectTypesFactory"
-        name="ocds.contenttypes.ProjectTypes"
+        name="ocds.contenttypes.projecttypes"
     />
 
 
