@@ -22,9 +22,9 @@
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
     <element value="ContractingProcess" />
+    <element value="File" />
       <!--
     <element value="Document" />
-    <element value="File" />
   -->
   </property>
   <!-- Schema, class and security -->
