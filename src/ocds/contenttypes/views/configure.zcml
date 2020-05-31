@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="infrastructure-project-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".infrastructure_project_view.InfrastructureProjectView"
+    template="infrastructure_project_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="ocds-release-view"
     for="ocds.contenttypes.content.o_c_d_s_release.IOCDSRelease"
     class=".o_c_d_s_release_view.OCDSReleaseView"
