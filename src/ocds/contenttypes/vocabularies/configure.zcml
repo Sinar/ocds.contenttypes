@@ -6,14 +6,13 @@
 
     <utility
         component=".sector.SectorFactory"
-        name="ocds.contenttypes.Sector"
+        name="ocds.sector"
     />
 
 
     <utility
         component=".project_types.ProjectTypesFactory"
-        name="ocds.contenttypes.projecttypes"
+        name="ocds.projecttypes"
     />
-
 
 </configure>

@@ -22,12 +22,25 @@ class Sector(object):
     """
 
     def __call__(self, context):
-        # Just an example list of content for our vocabulary,
-        # this can be any static or dynamic data, a catalog result for example.
+
         items = [
-            VocabItem(u'sony-a7r-iii', _(u'Sony Aplha 7R III')),
-            VocabItem(u'canon-5d-iv', _(u'Canon 5D IV')),
-        ]
+            VocabItem(u'education', _(u'Education')),
+            VocabItem(u'health', _(u'Health')),
+            VocabItem(u'energy', _(u'Energy')),
+            VocabItem(u'communications', _(u'Communications')),
+            VocabItem(u'waterAndWaste', _(u'Water and waste')),
+            VocabItem(u'governance', _(u'Governance')),
+            VocabItem(u'economy', _(u'Economy')),
+            VocabItem(u'cultureSportsAndRecreation', 
+                      _(u'Culture, sports and recreation')),
+            VocabItem(u'transport', _(u'Transport')),
+            VocabItem(u'transport.air', _(u'Air transport')),
+            VocabItem(u'transport.water', _(u'Water traansport')),
+            VocabItem(u'transport.rail', _(u'Transport rail')),
+            VocabItem(u'transport.road', _(u'Transport road')),
+            VocabItem(u'transport.urban', _(u'Transport urban')),
+            VocabItem(u'socialHousing', _(u'Social housing')),
+            ]
 
         # Fix context if you are using the vocabulary in DataGridField.
         # See https://github.com/collective/collective.z3cform.datagridfield/issues/31:  # NOQA: 501

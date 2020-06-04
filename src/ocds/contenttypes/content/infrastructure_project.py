@@ -91,6 +91,12 @@ class IInfrastructureProject(model.Schema):
     # Project Sector
     # https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector
 
+    project_sector = schema.Choice(
+        title=_(u'Project Sector'),
+        required=False,
+        vocabulary='ocds.sector',
+        )
+
     purpose = schema.Text(
             title=_(u'Project purpose'),
             description=_(u'The socioeconomic purpose of this project'),
@@ -104,7 +110,7 @@ class IInfrastructureProject(model.Schema):
     project_type = schema.Choice(
         title=_(u'Project Type'),
         required=False,
-        vocabulary='ocds.contenttypes.projecttypes',
+        vocabulary='ocds.projecttypes',
         )
 
     # AssetLifeTime
@@ -171,19 +177,12 @@ class IInfrastructureProject(model.Schema):
             )
 
     budget_approvalDate = schema.Date(
-            title=_(u'BudgetApproval'),
+            title=_(u'Budget Approval Date'),
             description=_(u'''
-            Specify the projected costs or allocated budget for the
-            project (currency and amount). This cost should include land
-            and property acquisition, environmental mitigation measures,
-            health and safety provisions, client, consultant and
-            contractor costs, as well as applicable taxes. Where this
-            value includes costs incurred directly by the project owner
-            or other agencies, which are not subject to procurement,
-            then this value is likely to be higher than the sum of all
-            the linked contracting processes. To indicate the profile of
-            a budget over time, or the budget coming from different
-            sources, the extended budgetBreakdown section may be used.
+            The date on which the project budget was approved. Where
+            documentary evidence for this exists, it may be included
+            amongst the project documents with the documentType set to
+            ‘budgetApproval’.
             '''),
             required=False,
             )

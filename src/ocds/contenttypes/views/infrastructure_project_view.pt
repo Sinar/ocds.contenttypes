@@ -4,10 +4,234 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="ocds.contenttypes"
       metal:use-macro="context/main_template/macros/master">
+
+
 <body>
   <metal:block fill-slot="content-core">
-      <h2 i18n:translate="">Sample View</h2>
-      <p tal:content="view/msg">this gets replaced</p>
+
+  <p class="description">
+  Reference ID: <span tal:replace="context/id_reference"/>
+  </p>
+
+  
+  <div class="row">
+      <div class="col-md-4">
+          <dl>
+              <dt>Purpose</dt>
+              <dd tal:content="context/purpose">
+              </dd>
+          </dl>
+
+      </div>
+      <div class="col-md-2">
+          <dl>
+             <dt>Sector</dt>
+              <dd tal:content="structure view/w/project_sector/render">
+              </dd>
+
+
+              <dt>Type</dt>
+              <dd tal:content="context/project_type">
+              </dd>
+      </div>
+      <div class="col-md-2">
+          <dl>
+              <dt>Locations</dt>
+              <dd><p class="discreet">Not yet implemented</p>
+              </dd>
+      </div>
+      <div class="col-md-2">
+          <dl>
+              <dt>Start Date</dt>
+              <dd tal:content="structure view/w/project_startDate/render">
+              </dd>
+              <dt>End Date</dt>
+              <dd tal:content="structure view/w/project_endDate/render">
+              </dd>
+              <dt>Maximum Date Extention</dt>
+              <dd><span tal:content="structure
+                                     view/w/project_maxExtentDate/render"><span>
+                                         <small>
+                                             <br />
+                  The period cannot be extended beyond this date.
+                                         </small>
+              </dd>
+      </div>
+  </div>
+
+  <h4>Budget</h4>
+  <hr />
+  <p>The projected costs or allocated budget for the project (currency and amount). This cost should include land and property acquisition, environmental mitigation measures, health and safety provisions, client, consultant and contractor costs, as well as applicable taxes. Where this value includes costs incurred directly by the project owner or other agencies, which are not subject to procurement, then this value is likely to be higher than the sum of all the linked contracting processes. 
+  </p>
+  <div class="row">
+      <div class="col-md-3">
+          <dl>
+              <dt>Budget Amount</dt>
+              <dd><span tal:replace="context/budget_currency"><span
+                    tal:replace="structure view/w/budget_amount/render">
+              </dd>
+          </dl>
+      </div>
+      <div class="cold-md-3">
+          <dl>
+              <dt>Budget Approval Date</dt>
+              <dd tal:content="structure view/w/budget_approvalDate/render">
+              </dd>
+          </dl>
+      </div>
+  </div>
+
+  <h4>Parties</h4>
+  <hr />
+  <div class="row">
+      <div class="col-md-3">
+          <h5>Buyer</h5>
+                <a href=""
+                   tal:attributes="href context/buyer/to_object/absolute_url">
+                <span tal:content="context/buyer/to_object/title"></span>
+                </a>
+      </div>
+      <div class="col-md-3">
+          <h5>Procuring Entity</h5>
+        <a href=""
+           tal:attributes="href context/procuringEntity/to_object/absolute_url">
+        <span tal:content="context/procuringEntity/to_object/title"></span>
+        </a>
+      </div>
+      <div class="col-md-3">
+          <h5> Suppliers</h5>
+        <ul>
+            <li tal:repeat="item context/suppliers">
+                <a href=""
+                   tal:attributes="href item/to_object/absolute_url">
+                <span tal:content="item/to_object/title">Supplier</span>
+                </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+          <h5>Tenderers</h5>
+        <ul>
+            <li tal:repeat="item context/tenderers">
+                <a href=""
+                   tal:attributes="href item/to_object/absolute_url">
+                <span tal:content="item/to_object/title">Supplier</span>
+                </a>
+            </li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+          <h5>Funders</h5>
+        <ul>
+            <li tal:repeat="item context/funders">
+                <a href=""
+                   tal:attributes="href item/to_object/absolute_url">
+                <span tal:content="item/to_object/title">Supplier</span>
+                </a>
+            </li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+          <h5>Review Body</h5>
+        <a href=""
+           tal:attributes="href context/reviewBody/to_object/absolute_url">
+        <span tal:content="context/reviewBody/to_object/title"></span>
+        </a>
+      </div>
+      <div class="col-md-2">
+          <h5>Interested Parties</h5>
+        <ul>
+            <li tal:repeat="item context/interestedParties">
+                <a href=""
+                   tal:attributes="href item/to_object/absolute_url">
+                <span tal:content="item/to_object/title">Supplier</span>
+                </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+  <h4>Asset Lifetime</h4>
+  <hr />
+  <p>The anticipated lifetime of the asset after this project is
+  completed.</p>
+  <div class="row">
+     <div class="col-md-3">
+          <dl>
+              <dt>Asset Start Date</dt>
+              <dd tal:content="structure view/w/assetLifetime_startDate/render">
+              </dd>
+          </dl>
+      </div>
+     <div class="col-md-3">
+          <dl>
+              <dt>Asset End Date</dt>
+              <dd tal:content="structure view/w/assetLifetime_endDate/render">
+              </dd>
+          </dl>
+      </div>
+     <div class="col-md-3">
+          <dl>
+              <dt>Asset Max Extention Date</dt>
+              <dd tal:content="structure view/w/assetLifetime_maxExtentDate/render">
+              </dd>
+          </dl>
+      </div>
+  </div>
+
+
+  <h4>Completion</h4>
+  <hr />
+  <p>This information is provided at project completion, and reflects the final timing and values relating to the project. The reason for any variation (not already explained) between the anticipated project scope, period and value should be detailed.
+  </p>
+
+  <div class="row">
+     <div class="col-md-3">
+          <dl>
+              <dt>Completion Final Value</dt>
+              <dd><span tal:replace="context/completion_finalValue_currency"><span
+                    tal:replace="structure view/w/completion_finalValue_amount/render">
+              </dd>
+              <dd><small>The total cost of this project at completion.</small></dd>
+          </dl>
+      </div>
+     <div class="col-md-3">
+          <dl>
+              <dt>Asset End Date</dt>
+              <dd tal:content="structure view/w/assetLifetime_endDate/render">
+              </dd>
+          </dl>
+      </div>
+     <div class="col-md-3">
+          <dl>
+              <dt>Asset Max Extention Date</dt>
+              <dd tal:content="structure view/w/assetLifetime_maxExtentDate/render">
+              </dd>
+          </dl>
+      </div>
+  </div>
+
+      <h5>Final Date Details</h5>
+      <p><small>
+          Details related to the endDate. This may be a justification for the contract’s completion date being different than in the original contract.
+        </small></p>
+          <p tal:content="structure
+              view/w/completion_endDate_details"></p>
+
+
+      <h5>Final Value Details</h5>
+      <p><small>Details related to the final value. This may be a
+          justification for the completed project’s value being
+          different than in the original or latest revised
+          budget.</small></p>
+          <p tal:content="structure
+              view/w/completion_finalValue_details"></p>
+
+  <div tal:replace="structure provider:plone.belowcontentbody" />
+
   </metal:block>
+
 </body>
 </html>
