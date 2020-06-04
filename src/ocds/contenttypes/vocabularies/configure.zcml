@@ -5,6 +5,12 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".sector.SectorFactory"
+        name="ocds.contenttypes.Sector"
+    />
+
+
+    <utility
         component=".project_types.ProjectTypesFactory"
         name="ocds.contenttypes.projecttypes"
     />
