@@ -84,21 +84,21 @@
   <h4>Parties</h4>
   <hr />
   <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-3" tal:condition="context/buyer">
           <h5>Buyer</h5>
                 <a href=""
                    tal:attributes="href context/buyer/to_object/absolute_url">
                 <span tal:content="context/buyer/to_object/title"></span>
                 </a>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3" tal:condition="context/procuringEntity">
           <h5>Procuring Entity</h5>
         <a href=""
            tal:attributes="href context/procuringEntity/to_object/absolute_url">
         <span tal:content="context/procuringEntity/to_object/title"></span>
         </a>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3" tal:condition="context/suppliers">
           <h5> Suppliers</h5>
         <ul>
             <li tal:repeat="item context/suppliers">
@@ -111,7 +111,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-2" tal:condition="context/tenderers">
           <h5>Tenderers</h5>
         <ul>
             <li tal:repeat="item context/tenderers">
@@ -122,7 +122,7 @@
             </li>
         </ul>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2" tal:condition="context/tenderers">
           <h5>Funders</h5>
         <ul>
             <li tal:repeat="item context/funders">
@@ -133,14 +133,14 @@
             </li>
         </ul>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2" tal:condition="context/reviewBody">
           <h5>Review Body</h5>
         <a href=""
            tal:attributes="href context/reviewBody/to_object/absolute_url">
         <span tal:content="context/reviewBody/to_object/title"></span>
         </a>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2" tal:condition="context/interestedParties">
           <h5>Interested Parties</h5>
         <ul>
             <li tal:repeat="item context/interestedParties">
