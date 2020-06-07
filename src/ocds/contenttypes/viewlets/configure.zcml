@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="ocds.contenttypes">
+
+  -*- extra stuff goes here -*-
+
+  <browser:viewlet
+     name="parties-viewlet"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     layer="ocds.contenttypes.interfaces.IOcdsContenttypesLayer"
+     class=".parties_viewlet.PartiesViewlet"
+     template="parties-viewlet.pt"
+     permission="zope2.View"
+     />
+
+
+</configure>
