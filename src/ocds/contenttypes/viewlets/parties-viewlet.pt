@@ -1,3 +1,100 @@
-<div class="days_to_conf">
-    ${view/message}
+<div class="parties">
+    <h4>Procurement</h4> 
+
+    <h5>Infrastructure Projects</h5>
+    <div tal:condition="python:view.infra(attribute_name='buyer')"
+         tal:repeat="project python:view.infra(attribute_name='buyer')">
+        Buyer: 
+        <a href="" tal:attributes="href project/absolute_url">
+        <span tal:content="project/title"></span>
+        </a>
+        Budget:
+        <span tal:content="project/budget_currency">
+        <span tal:content="project/budget_amount">
+        </span>
+
+    </div>
+    <div
+        tal:condition="python:view.infra(attribute_name='procuringEntity')"
+         tal:repeat="project
+         python:view.infra(attribute_name='procuringEntity')">
+        Procuring Entity: 
+        <a href="" tal:attributes="href project/absolute_url">
+        <span tal:content="project/title"></span>
+        </a>
+        Budget:
+        <span tal:content="project/budget_currency">
+        <span tal:content="project/budget_amount">
+        </span>
+
+    </div>
+    <div
+        tal:condition="python:view.infra(attribute_name='suppliers')"
+         tal:repeat="project
+         python:view.infra(attribute_name='suppliers')">
+        Supplier: 
+        <a href="" tal:attributes="href project/absolute_url">
+        <span tal:content="project/title"></span>
+        </a>
+        Budget:
+        <span tal:content="project/budget_currency">
+        <span tal:content="project/budget_amount">
+        </span>
+
+    </div>
+    <div
+        tal:condition="python:view.infra(attribute_name='tenderers')"
+         tal:repeat="project
+         python:view.infra(attribute_name='tenderers')">
+        Submitted Tender: 
+        <a href="" tal:attributes="href project/absolute_url">
+        <span tal:content="project/title"></span>
+        </a>
+        Budget:
+        <span tal:content="project/budget_currency">
+        <span tal:content="project/budget_amount">
+        </span>
+
+    </div>
+    <div
+        tal:condition="python:view.infra(attribute_name='funders')"
+         tal:repeat="project
+         python:view.infra(attribute_name='funders')">
+        Procured: 
+        <a href="" tal:attributes="href project/absolute_url">
+        <span tal:content="project/title"></span>
+        </a>
+        Budget:
+        <span tal:content="project/budget_currency">
+        <span tal:content="project/budget_amount">
+        </span>
+
+    </div>
+    <div
+        tal:condition="python:view.infra(attribute_name='reviewBody')"
+         tal:repeat="project
+         python:view.infra(attribute_name='reviewBody')">
+        Reviewing Body: 
+        <a href="" tal:attributes="href project/absolute_url">
+        <span tal:content="project/title"></span>
+        </a>
+        Budget:
+        <span tal:content="project/budget_currency">
+        <span tal:content="project/budget_amount">
+        </span>
+
+    </div>
+    <div
+        tal:condition="python:view.infra(attribute_name='interestedParties')"
+         tal:repeat="project
+         python:view.infra(attribute_name='interestedParties')">
+        Interested Party: 
+        <a href="" tal:attributes="href project/absolute_url">
+        <span tal:content="project/title"></span>
+        </a>
+        Budget:
+        <span tal:content="project/budget_currency">
+        <span tal:content="project/budget_amount">
+        </span>
+     </div>
 </div>
