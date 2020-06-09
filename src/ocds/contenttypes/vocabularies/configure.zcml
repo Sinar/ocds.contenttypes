@@ -6,25 +6,25 @@
 
     <utility
         component=".document_type.DocumentTypeFactory"
-        name="ocds.contenttypes.DocumentType"
+        name="ocds.DocumentType"
     />
 
 
     <utility
         component=".project_status.ProjectStatusFactory"
-        name="ocds.contenttypes.ProjectStatus"
+        name="ocds.ProjectStatus"
     />
 
 
     <utility
         component=".method.MethodFactory"
-        name="ocds.contenttypes.Method"
+        name="ocds.Method"
     />
 
 
     <utility
         component=".contracting_process_status.ContractingProcessStatusFactory"
-        name="ocds.contenttypes.ContractingProcessStatus"
+        name="ocds.ContractingProcessStatus"
     />
 
 

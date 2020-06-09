@@ -14,7 +14,7 @@
   </p>
 
   
-  <div class="row">
+  <div class="row projectDetails">
       <div class="col-md-4">
           <dl>
               <dt>Purpose</dt>
@@ -23,18 +23,28 @@
           </dl>
 
       </div>
-      <div class="col-md-2">
+      <div class="col-md-3">
           <dl>
+              <dt>Status</dt>
+              <dd tal:content="structure view/w/project_status/render">
+              <dd tal:condition="not:context/project_status">
+              Unknown
+              </dd>
              <dt>Sector</dt>
               <dd tal:content="structure view/w/project_sector/render">
               </dd>
-
-
-              <dt>Type</dt>
-              <dd tal:content="context/project_type">
+             <dd tal:condition="not:context/project_sector">
+              Unknown
               </dd>
+              <dt>Type</dt>
+              <dd tal:content="structure view/w/project_type/render">
+              </dd>
+              <dd tal:condition="not:context/project_type">
+              Unknown
+              </dd>
+          </dl>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-3">
           <dl>
               <dt>Locations</dt>
               <dd><p class="discreet">Not yet implemented</p>

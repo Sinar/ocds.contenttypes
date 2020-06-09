@@ -54,6 +54,16 @@ class IInfrastructureProject(model.Schema):
     # status
     # https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectstatus
 
+    project_status = schema.Choice(
+        title=_(u'Project Status'),
+        description=_(u'''
+        The current phase or status of this project
+        '''),
+
+        required=False,
+        vocabulary='ocds.ProjectStatus',
+        )
+
     # Project Period as fieldset
 
     # startDate
