@@ -25,8 +25,156 @@ class DocumentType(object):
         # Just an example list of content for our vocabulary,
         # this can be any static or dynamic data, a catalog result for example.
         items = [
-            VocabItem(u'sony-a7r-iii', _(u'Sony Aplha 7R III')),
-            VocabItem(u'canon-5d-iv', _(u'Canon 5D IV')),
+            VocabItem(u'needsAssessment', _(u'Needs Assessment')),
+            VocabItem(u'valueForMoneyAnalysis',
+                      _(u'Value for money analysis')),
+            VocabItem(u'technicalSpecifications',
+                      _(u'Technical Specifications')),
+            VocabItem(u'serviceDescription',
+                      _(u'Service Description')),
+            VocabItem(u'serviceDescription',
+                      _(u'Service Description')),
+            VocabItem(u'estimatedDemand',
+                      _(u'Estimated Demand')),
+            VocabItem(u'contractDraft',
+                      _(u'Contract Draft')),
+            VocabItem(u'contractSchedule',
+                      _(u'Contract Schedule')),
+            VocabItem(u'contractSigned',
+                      _(u'Contract Signed')),
+            VocabItem(u'feasibilityStudy',
+                      _(u'Feasibility Study')),
+            VocabItem(u'environmentalImpact',
+                      _(u'Environmental Impact')),
+            VocabItem(u'finalAudit',
+                      _(u'Final Audit')),
+            VocabItem(u'tenderNotice',
+                      _(u'Tender Notice')),
+            VocabItem(u'evaluationCommittee',
+                      _(u'Evaluation Committee Details')),
+            VocabItem(u'requestForQualification',
+                      _(u'Request for Qualification')),
+            VocabItem(u'evaluationCriteria',
+                      _(u'Evaluation Criteria')),
+            VocabItem(u'minutes',
+                      _(u'Minutes')),
+            VocabItem(u'shortlistedFirms',
+                      _(u'Shortedlisted Firms')),
+            VocabItem(u'registrationParameters',
+                      _(u'registrationParameters')),
+            VocabItem(u'evaluationReports',
+                      _(u'Evaluation Reports')),
+            VocabItem(u'contractGuarantees',
+                      _(u'Guarantees')),
+            VocabItem(u'defaultEvents',
+                      _(u'Defaults')),
+            VocabItem(u'defaultEvents',
+                      _(u'Defaults')),
+            VocabItem(u'termination',
+                      _(u'Termination')),
+            VocabItem(u'performanceReport',
+                      _(u'Performance report')),
+            VocabItem(u'awardNotice',
+                      _(u'Award Notice')),
+            VocabItem(u'contractNotice',
+                      _(u'Contract Notice')),
+            VocabItem(u'completionCertificate',
+                      _(u'Completion certificate')),
+            VocabItem(u'procurementPlan',
+                      _(u'Procurement Plan')),
+            VocabItem(u'biddingDocuments',
+                      _(u'Bidding Documents')),
+            VocabItem(u'contractArrangements',
+                      _(u'Contract Arrangements')),
+            VocabItem(u'physicalProgressReport',
+                      _(u'Physical progress reports')),
+            VocabItem(u'physicalProgressReport',
+                      _(u'Physical progress reports')),
+            VocabItem(u'financialProgressReport',
+                      _(u'Financial progress reports')),
+            VocabItem(u'hearingNotice',
+                      _(u'Public Hearing Notice')),
+            VocabItem(u'marketStudies',
+                      _(u'Market Studies')),
+            VocabItem(u'eligibilityCriteria',
+                      _(u'Eligibility Criteria')),
+            VocabItem(u'clarifications',
+                      _(u'Clarifications to bidders questions')),
+            VocabItem(u'assetAndLiabilityAssessment',
+                      _(u'Assessment of governents\' assets and ' +
+                          'liabilities')),
+            VocabItem(u'riskProvisions',
+                      _(u'''
+                      Provisions for management of risks and liabilities
+                      ''')),
+            VocabItem(u'winningBid',
+                      _(u'''
+                      Wining Bid
+                      ''')),
+            VocabItem(u'complaints',
+                      _(u'''
+                      Complaints and decisions
+                      ''')),
+            VocabItem(u'contractAnnexe',
+                      _(u'''
+                      Annexes to the Contract
+                      ''')),
+            VocabItem(u'subContract',
+                      _(u'''
+                      Subcontracts
+                      ''')),
+            VocabItem(u'projectPlan',
+                      _(u'''
+                      Project Plan
+                      ''')),
+            VocabItem(u'billOfQuantity',
+                      _(u'''
+                      Bill Of Quantity
+                      ''')),
+            VocabItem(u'bidders',
+                      _(u'''
+                      Information on bidders
+                      ''')),
+            VocabItem(u'conflictOfInterest',
+                      _(u'''
+                      Conflict of Interest
+                      ''')),
+            VocabItem(u'debarments',
+                      _(u'''
+                      Debarments
+                      ''')),
+            VocabItem(u'illustration',
+                      _(u'''
+                      Illustrations
+                      ''')),
+            VocabItem(u'submissionDocuments',
+                      _(u'''
+                      Bid Submission Documents
+                      ''')),
+            VocabItem(u'contractSummary',
+                      _(u'''
+                      Contract Summary
+                      ''')),
+            VocabItem(u'cancellationDetails',
+                      _(u'''
+                      Cancellation Details
+                      ''')),
+            VocabItem(u'projectScope',
+                      _(u'''
+                      Project scope
+                      ''')),
+            VocabItem(u'landAndSettlementImpact',
+                      _(u'''
+                      Land and Settlement Impact
+                      ''')),
+            VocabItem(u'projectEvaluation',
+                      _(u'''
+                      Project evaluation
+                      ''')),
+            VocabItem(u'budgetApproval',
+                      _(u'''
+                      Budget approval 
+                      ''')),
         ]
 
         # Fix context if you are using the vocabulary in DataGridField.
