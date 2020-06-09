@@ -5,6 +5,12 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".contracting_process_status.ContractingProcessStatusFactory"
+        name="ocds.contenttypes.ContractingProcessStatus"
+    />
+
+
+    <utility
         component=".sector.SectorFactory"
         name="ocds.sector"
     />
