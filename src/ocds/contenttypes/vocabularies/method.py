@@ -25,8 +25,10 @@ class Method(object):
         # Just an example list of content for our vocabulary,
         # this can be any static or dynamic data, a catalog result for example.
         items = [
-            VocabItem(u'sony-a7r-iii', _(u'Sony Aplha 7R III')),
-            VocabItem(u'canon-5d-iv', _(u'Canon 5D IV')),
+            VocabItem(u'open', _(u'Open')),
+            VocabItem(u'selective', _(u'Selective')),
+            VocabItem(u'limited', _(u'Limited')),
+            VocabItem(u'direct', _(u'Direct')),
         ]
 
         # Fix context if you are using the vocabulary in DataGridField.
