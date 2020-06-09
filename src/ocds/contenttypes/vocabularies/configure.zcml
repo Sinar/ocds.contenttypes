@@ -5,6 +5,12 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".document_type.DocumentTypeFactory"
+        name="ocds.contenttypes.DocumentType"
+    />
+
+
+    <utility
         component=".project_status.ProjectStatusFactory"
         name="ocds.contenttypes.ProjectStatus"
     />
