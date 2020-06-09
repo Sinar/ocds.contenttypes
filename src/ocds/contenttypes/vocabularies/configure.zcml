@@ -5,6 +5,12 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".method.MethodFactory"
+        name="ocds.contenttypes.Method"
+    />
+
+
+    <utility
         component=".contracting_process_status.ContractingProcessStatusFactory"
         name="ocds.contenttypes.ContractingProcessStatus"
     />
