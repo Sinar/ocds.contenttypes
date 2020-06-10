@@ -10,6 +10,16 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <plone:behavior
+        name="ocds.contenttypes.document_type"
+        title="DocumentType"
+        description="OCDS Document Type Selection"
+        provides=".document_type.IDocumentType"
+        factory=".document_type.DocumentType"
+        marker=".document_type.IDocumentTypeMarker"
+        />
+
+
+    <plone:behavior
         name="ocds.contenttypes.parties"
         title="Parties"
         description="OCDS Party Fields"
