@@ -8,6 +8,16 @@
     xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
     i18n:domain="ocds.contenttypes">
   <schema>
+    <field name="title" type="zope.schema.TextLine">
+      <description/>
+      <required>False</required>
+      <title i18n:translate="">Title</title>
+    </field>
+    <field name="description" type="zope.schema.Text">
+      <description/>
+      <required>False</required>
+      <title i18n:translate="">Description</title>
+    </field>
     <field name="file" type="plone.namedfile.field.NamedBlobFile" marshal:primary="true">
       <description/>
       <title i18n:translate="label_file">File</title>
