@@ -9,13 +9,6 @@
         name="ocds.ContractNature"
     />
 
-
-    <utility
-        component=".document_type.DocumentTypeFactory"
-        name="ocds.DocumentType"
-    />
-
-
     <utility
         component=".project_status.ProjectStatusFactory"
         name="ocds.ProjectStatus"
