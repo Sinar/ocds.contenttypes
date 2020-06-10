@@ -25,7 +25,7 @@ class ProjectStatus(object):
         # Just an example list of content for our vocabulary,
         # this can be any static or dynamic data, a catalog result for example.
         items = [
-            VocabItem(u'identificastion', _(u'Idenfitication')),
+            VocabItem(u'identification', _(u'Identification')),
             VocabItem(u'preparation', _(u'Preparation')),
             VocabItem(u'implementation', _(u'Implementation')),
             VocabItem(u'completion', _(u'Completion')),

@@ -74,6 +74,28 @@ class IParties(model.Schema):
             required=False,
             )
 
+    # administrativeEntity
+
+    directives.widget('administrativeEntity',
+                      RelatedItemsFieldWidget,
+                      pattern_options={
+                        'basePath': '/',
+                        'mode': 'auto',
+                        'favourites': [],
+                        }
+                      )
+
+    administrativeEntity = RelationChoice(
+            title=u'Administrative Entity',
+            description=_(u'''
+            Entity responsible for contract administration
+            '''),
+            source=CatalogSource(portal_type='Organization'),
+            required=False,
+            )
+
+
+
     # suppliers
 
     directives.widget('suppliers',
@@ -131,7 +153,6 @@ class IParties(model.Schema):
                         'favourites': [],
                         }
                       )
-
 
     funders = RelationList(
             title=u'Funders',
