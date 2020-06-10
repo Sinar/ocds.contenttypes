@@ -5,6 +5,12 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".award_criteria.AwardCriteriaFactory"
+        name="ocds.contenttypes.AwardCriteria"
+    />
+
+
+    <utility
         component=".tender_status.TenderStatusFactory"
         name="ocds.TenderStatus"
     />
