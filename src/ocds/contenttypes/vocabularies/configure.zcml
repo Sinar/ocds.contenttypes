@@ -5,6 +5,12 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".modification_type.ModificationTypeFactory"
+        name="ocds.contenttypes.ModificationType"
+    />
+
+
+    <utility
         component=".contract_nature.ContractNatureFactory"
         name="ocds.ContractNature"
     />
