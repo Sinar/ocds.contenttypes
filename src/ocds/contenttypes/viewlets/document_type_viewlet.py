@@ -1,15 +1,22 @@
 # -*- coding: utf-8 -*-
 
 from plone.app.layout.viewlets import ViewletBase
+from zope.component import getUtility
+from zope.schema.interfaces import IVocabularyFactory
 
 
 class DocumentTypeViewlet(ViewletBase):
 
-    def update(self):
-        self.message = self.get_message()
+    def documenttype_title(self, value):
 
-    def get_message(self):
-        return u'My message'
+        factory = getUtility(IVocabularyFactory,
+                             'ocds.DocumentType')
+
+        vocabulary = factory(self)
+
+        term = vocabulary.getTerm(value)
+
+        return term.title
 
     def render(self):
         return super(DocumentTypeViewlet, self).render()

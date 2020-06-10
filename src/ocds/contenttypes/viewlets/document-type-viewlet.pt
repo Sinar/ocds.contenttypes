@@ -1,3 +1,7 @@
-<div class="days_to_conf">
-    ${view/message}
+<div class="DocumentType">
+    <h3>Document Type</h3>
+    <div tal:repeat="type context/DocumentType">
+    <p tal:content=python:view.documenttype_title(type)">
+    </p>
+    </div>
 </div>

@@ -8,8 +8,8 @@
 
   <browser:viewlet
      name="document-type-viewlet"
-     for="plone.app.contenttypes.interfaces.IDocument"
-     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     for="ocds.contenttypes.behaviors.document_type.IDocumentTypeMarker"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
      layer="ocds.contenttypes.interfaces.IOcdsContenttypesLayer"
      class=".document_type_viewlet.DocumentTypeViewlet"
      template="document-type-viewlet.pt"
