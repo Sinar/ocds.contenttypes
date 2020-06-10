@@ -21,7 +21,7 @@
   <property name="global_allow">False</property>
   <!-- Schema, class and security -->
   <property name="add_permission">ocds.contenttypes.AddOCDSDocument</property>
-  <property name="klass">plone.dexterity.content.Item</property>
+  <property name="klass">plone.app.contenttypes.content.File</property>
   <property name="model_file">ocds.contenttypes.content:o_c_d_s_document.xml</property>
   <property name="model_source"></property>
   <property name="schema"></property>
