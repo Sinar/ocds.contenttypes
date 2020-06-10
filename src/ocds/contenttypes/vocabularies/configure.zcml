@@ -6,7 +6,7 @@
 
     <utility
         component=".milestone_status.MilestoneStatusFactory"
-        name="ocds.contenttypes.MilestoneStatus"
+        name="ocds.MilestoneStatus"
     />
 
 
