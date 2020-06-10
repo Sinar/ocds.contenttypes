@@ -1,39 +1,37 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Infrastructure Project"
+    name="Contract Process"
     meta_type="Dexterity FTI"
     i18n:domain="ocds.contenttypes">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Infrastructure Project</property>
+      name="title">Contract Process</property>
   <property
       i18n:translate=""
-      name="description">OC4IDS Project to track data and documents for Infrastructure Projects</property>
+      name="description">Summary information about a contracting process, including a log of changes over time.</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Infrastructure Project</property>
+  <property name="factory">Contract Process</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
 
   <!-- Hierarchy control -->
-  <property name="global_allow">True</property>
+  <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
-    <element value="Contract Process" />
-        <element value="ContractingProcess" />
-    <element value="File" />
-      <!--
+  <!--
     <element value="Document" />
+    <element value="File" />
   -->
   </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">ocds.contenttypes.AddInfrastructureProject</property>
-  <property name="klass">ocds.contenttypes.content.infrastructure_project.InfrastructureProject</property>
+  <property name="add_permission">ocds.contenttypes.AddContractProcess</property>
+  <property name="klass">ocds.contenttypes.content.contract_process.ContractProcess</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">ocds.contenttypes.content.infrastructure_project.IInfrastructureProject</property>
+  <property name="schema">ocds.contenttypes.content.contract_process.IContractProcess</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
@@ -47,11 +45,10 @@
     <element value="plone.ownership"/>
     <element value="plone.publication"/>
     <element value="plone.categorization"/>
+    <element value="plone.basic"/>
     <element value="plone.locking" />
-    <element value="ocds.contenttypes.parties" />
-    <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
     <!--<element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />-->
-    <element value="plone.leadimage"/>
+    <!--<element value="plone.leadimage"/>-->
     <!--<element value="plone.relateditems"/>-->
     <!--<element value="plone.richtext"/>-->
     <!--<element value="plone.tableofcontents"/>-->
@@ -64,8 +61,8 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Infrastructure Project</property>
-  <property name="default_view">infrastructure-project-view</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Contract Process</property>
+  <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>
   <property name="view_methods">
