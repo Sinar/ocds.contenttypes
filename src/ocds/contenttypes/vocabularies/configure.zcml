@@ -5,6 +5,12 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".tender_status.TenderStatusFactory"
+        name="ocds.contenttypes.TenderStatus"
+    />
+
+
+    <utility
         component=".document_type.DocumentTypeFactory"
         name="ocds.DocumentType"
     />
