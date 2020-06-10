@@ -7,6 +7,16 @@
   -*- extra stuff goes here -*-
 
   <browser:viewlet
+     name="document-type-viewlet"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     layer="ocds.contenttypes.interfaces.IOcdsContenttypesLayer"
+     class=".document_type_viewlet.DocumentTypeViewlet"
+     template="document-type-viewlet.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
      name="parties-viewlet"
      for="popolo.contenttypes.content.person.IPerson"
      manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
