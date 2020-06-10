@@ -21,7 +21,9 @@
   <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
+       <element value="Modification" />
   <!--
+
     <element value="Document" />
     <element value="File" />
   -->
@@ -45,7 +47,7 @@
     <element value="plone.ownership"/>
     <element value="plone.publication"/>
     <element value="plone.categorization"/>
-    <element value="plone.basic"/>
+    <!--<element value="plone.basic"/> -->
     <element value="plone.locking" />
     <!--<element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />-->
     <!--<element value="plone.leadimage"/>-->

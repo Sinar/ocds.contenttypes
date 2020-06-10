@@ -10,6 +10,10 @@ from plone.app.z3cform.widget import SelectFieldWidget
 from zope import schema
 from collective import dexteritytextindexer
 from zope.interface import implementer
+from plone.app.z3cform.widget import RelatedItemsFieldWidget
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
+from plone.app.vocabularies.catalog import CatalogSource
 
 
 from ocds.contenttypes import _
@@ -22,6 +26,25 @@ class IModification(model.Schema):
     # and customize it in Python:
 
     # model.load('modification.xml')
+
+    # ContractingProcess
+    directives.widget('ContractingProcess',
+                      RelatedItemsFieldWidget,
+                      pattern_options={
+                        'basePath': '/',
+                        'mode': 'auto',
+                        'favourites': [],
+                        }
+                      )
+
+    ContractingProcess = RelationChoice(
+            title=u'Constracting Process',
+            description=_(u'''
+            Contracting Process this modification is for
+            '''),
+            source=CatalogSource(portal_type='Contracting Process'),
+            required=False,
+            )
 
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
@@ -50,7 +73,7 @@ class IModification(model.Schema):
     )
 
     directives.widget(modificationType=SelectFieldWidget)
-    modificationType = schema.Choice(
+    modificationType = schema.List(
         title=_(u'Type'),
         description=_(u'''
          Indicates whether the modification relates to the duration,
@@ -58,8 +81,12 @@ class IModification(model.Schema):
         '''),
 
         required=False,
-        vocabulary='ocds.modificationType',
+        default=[],
+        value_type=schema.Choice(
+            vocabulary='ocds.ModificationType',
+            )
         )
+
 
     # OCDS Release ID (not used yet)
 
