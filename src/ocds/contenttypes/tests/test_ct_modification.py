@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from ocds.contenttypes.content.modification import IModification  # NOQA E501
 from ocds.contenttypes.testing import OCDS_CONTENTTYPES_INTEGRATION_TESTING  # noqa
 from plone import api
 from plone.api.exc import InvalidParameterError
@@ -11,11 +12,6 @@ from zope.component import queryUtility
 import unittest
 
 
-try:
-    from plone.dexterity.schema import portalTypeToSchemaName
-except ImportError:
-    # Plone < 5
-    from plone.dexterity.utils import portalTypeToSchemaName
 
 
 class ModificationIntegrationTest(unittest.TestCase):
@@ -38,8 +34,7 @@ class ModificationIntegrationTest(unittest.TestCase):
     def test_ct_modification_schema(self):
         fti = queryUtility(IDexterityFTI, name='Modification')
         schema = fti.lookupSchema()
-        schema_name = portalTypeToSchemaName('Modification')
-        self.assertEqual(schema_name, schema.getName())
+        self.assertEqual(IModification, schema)
 
     def test_ct_modification_fti(self):
         fti = queryUtility(IDexterityFTI, name='Modification')
@@ -50,6 +45,12 @@ class ModificationIntegrationTest(unittest.TestCase):
         factory = fti.factory
         obj = createObject(factory)
 
+        self.assertTrue(
+            IModification.providedBy(obj),
+            u'IModification not provided by {0}!'.format(
+                obj,
+            ),
+        )
 
     def test_ct_modification_adding(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
@@ -59,6 +60,12 @@ class ModificationIntegrationTest(unittest.TestCase):
             id='modification',
         )
 
+        self.assertTrue(
+            IModification.providedBy(obj),
+            u'IModification not provided by {0}!'.format(
+                obj.id,
+            ),
+        )
 
         parent = obj.__parent__
         self.assertIn('modification', parent.objectIds())

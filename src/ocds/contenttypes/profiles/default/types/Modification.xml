@@ -10,7 +10,7 @@
       name="title">Modification</property>
   <property
       i18n:translate=""
-      name="description">Modifications</property>
+      name="description">Details of changes to the duration, price, scope or other significant features of the contracting process should be logged here.</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">Modification</property>
@@ -28,10 +28,10 @@
   </property>
   <!-- Schema, class and security -->
   <property name="add_permission">ocds.contenttypes.AddModification</property>
-  <property name="klass">plone.dexterity.content.Container</property>
-  <property name="model_file">ocds.contenttypes.content:modification.xml</property>
+  <property name="klass">ocds.contenttypes.content.modification.Modification</property>
+  <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema"></property>
+  <property name="schema">ocds.contenttypes.content.modification.IModification</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
