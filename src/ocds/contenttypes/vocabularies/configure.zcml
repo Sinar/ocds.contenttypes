@@ -5,6 +5,12 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".contract_nature.ContractNatureFactory"
+        name="ocds.contenttypes.ContractNature"
+    />
+
+
+    <utility
         component=".document_type.DocumentTypeFactory"
         name="ocds.DocumentType"
     />

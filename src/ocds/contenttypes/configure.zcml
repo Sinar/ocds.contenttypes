@@ -54,6 +54,9 @@
     <include package=".vocabularies" />
 
 
+    <include package=".vocabularies" />
+
+
   <include package=".viewlets" />
 
     <include package=".vocabularies" />
