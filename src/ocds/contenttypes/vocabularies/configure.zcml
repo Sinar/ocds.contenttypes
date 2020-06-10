@@ -6,7 +6,7 @@
 
     <utility
         component=".tender_status.TenderStatusFactory"
-        name="ocds.contenttypes.TenderStatus"
+        name="ocds.TenderStatus"
     />
 
 

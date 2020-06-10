@@ -25,8 +25,13 @@ class TenderStatus(object):
         # Just an example list of content for our vocabulary,
         # this can be any static or dynamic data, a catalog result for example.
         items = [
-            VocabItem(u'sony-a7r-iii', _(u'Sony Aplha 7R III')),
-            VocabItem(u'canon-5d-iv', _(u'Canon 5D IV')),
+            VocabItem(u'planning', _(u'Planning')),
+            VocabItem(u'planned', _(u'Planned')),
+            VocabItem(u'active', _(u'Active')),
+            VocabItem(u'cancelled', _(u'Cancelled')),
+            VocabItem(u'unsuccessful', _(u'Unsuccessful')),
+            VocabItem(u'complete', _(u'Complete')),
+            VocabItem(u'withrawn', _(u'Withdrawn')),
         ]
 
         # Fix context if you are using the vocabulary in DataGridField.
