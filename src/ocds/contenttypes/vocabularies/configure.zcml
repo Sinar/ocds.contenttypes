@@ -5,6 +5,12 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".milestone_status.MilestoneStatusFactory"
+        name="ocds.contenttypes.MilestoneStatus"
+    />
+
+
+    <utility
         component=".contract_status.ContractStatusFactory"
         name="ocds.ContractStatus"
     />
