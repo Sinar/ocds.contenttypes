@@ -5,6 +5,12 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".contract_status.ContractStatusFactory"
+        name="ocds.contenttypes.ContractStatus"
+    />
+
+
+    <utility
         component=".award_status.AwardStatusFactory"
         name="ocds.AwardStatus"
     />
