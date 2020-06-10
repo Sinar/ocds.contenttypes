@@ -54,6 +54,25 @@ class IContractingProcess(model.Schema):
                 required=False,
                 )
 
+    directives.widget(project_nature=SelectFieldWidget)
+    project_nature = schema.List(
+                title=_(u'Nature'),
+                description=_(u'''
+                Whether this contracting process relates to the design,
+                construction and/or supervision of the project, from the
+                contractNature codelist. More than one value may be
+                provided if the contract is for both design and
+                construction, or both design and supervision, etc.
+                '''),
+
+                default=[],
+                value_type=schema.Choice(
+                    vocabulary='ocds.ContractNature'
+                    ),
+                required=False,
+                )
+
+    directives.widget(project_status=SelectFieldWidget)
     project_status = schema.Choice(
         title=_(u'Project Status'),
         description=_(u'''
@@ -66,6 +85,7 @@ class IContractingProcess(model.Schema):
 
     # Tender Process
 
+    directives.widget(procurementMethod=SelectFieldWidget)
     procurementMethod = schema.Choice(
         title=_(u'Procurement Method'),
         description=_(u'''

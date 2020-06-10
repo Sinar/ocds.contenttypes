@@ -94,8 +94,6 @@ class IParties(model.Schema):
             required=False,
             )
 
-
-
     # suppliers
 
     directives.widget('suppliers',
