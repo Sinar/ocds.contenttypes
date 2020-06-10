@@ -45,8 +45,6 @@ class IContractingProcess(model.Schema):
             required=False,
             )
 
-
-
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
                 title=_(u'Title'),

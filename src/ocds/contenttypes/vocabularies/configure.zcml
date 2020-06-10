@@ -5,6 +5,11 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".document_type.DocumentTypeFactory"
+        name="ocds.DocumentType"
+    />
+
+    <utility
         component=".modification_type.ModificationTypeFactory"
         name="ocds.ModificationType"
     />
