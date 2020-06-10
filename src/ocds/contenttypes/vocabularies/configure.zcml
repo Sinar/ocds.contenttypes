@@ -6,7 +6,7 @@
 
     <utility
         component=".award_status.AwardStatusFactory"
-        name="ocds.contenttypes.AwardStatus"
+        name="ocds.AwardStatus"
     />
 
 
