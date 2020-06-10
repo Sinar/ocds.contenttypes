@@ -4,6 +4,5 @@
   <!--<object name="example_ct" meta_type="Dexterity FTI"/>-->
   <object meta_type="Dexterity FTI" name="OCDS Release"/>
   <object meta_type="Dexterity FTI" name="Infrastructure Project"/>
-  <object meta_type="Dexterity FTI" name="ContractingProcess"/>
   <object meta_type="Dexterity FTI" name="Modification"/>
 </object>

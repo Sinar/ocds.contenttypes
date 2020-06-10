@@ -7,9 +7,13 @@ from plone.supermodel import model
 # from plone.supermodel.directives import fieldset
 from plone.app.z3cform.widget import SelectFieldWidget
 # from z3c.form.browser.radio import RadioFieldWidget
-from zope import schema
 from collective import dexteritytextindexer
+from zope import schema
 from zope.interface import implementer
+from plone.app.z3cform.widget import RelatedItemsFieldWidget
+from z3c.relationfield.schema import RelationChoice
+# from z3c.relationfield.schema import RelationList
+from plone.app.vocabularies.catalog import CatalogSource
 
 
 from ocds.contenttypes import _
@@ -22,6 +26,25 @@ class IModification(model.Schema):
     # and customize it in Python:
 
     # model.load('modification.xml')
+
+    # contractingProcess
+    directives.widget('contractingProcess',
+                      RelatedItemsFieldWidget,
+                      pattern_options={
+                        'basePath': '/',
+                        'mode': 'auto',
+                        'favourites': [],
+                        }
+                      )
+
+    contractingProcess = RelationChoice(
+            title=u'Contracting Process',
+            description=_(u'''
+            The Contracting Process this modification refers to
+            '''),
+            source=CatalogSource(portal_type='Contracting Process'),
+            required=False,
+            )
 
     dexteritytextindexer.searchable('title')
     title = schema.TextLine(
@@ -50,15 +73,17 @@ class IModification(model.Schema):
     )
 
     directives.widget(modificationType=SelectFieldWidget)
-    modificationType = schema.Choice(
+    modificationType = schema.List(
         title=_(u'Type'),
         description=_(u'''
          Indicates whether the modification relates to the duration,
          value, scope or other aspect of the contract.
         '''),
-
+        default=[],
+        value_type=schema.Choice(
+            vocabulary='ocds.ModificationType',
+            ),
         required=False,
-        vocabulary='ocds.modificationType',
         )
 
     # OCDS Release ID (not used yet)
