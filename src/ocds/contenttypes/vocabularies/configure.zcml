@@ -6,7 +6,7 @@
 
     <utility
         component=".award_criteria.AwardCriteriaFactory"
-        name="ocds.contenttypes.AwardCriteria"
+        name="ocds.AwardCriteria"
     />
 
 
