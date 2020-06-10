@@ -6,7 +6,7 @@
 
     <utility
         component=".contract_nature.ContractNatureFactory"
-        name="ocds.contenttypes.ContractNature"
+        name="ocds.ContractNature"
     />
 
 
