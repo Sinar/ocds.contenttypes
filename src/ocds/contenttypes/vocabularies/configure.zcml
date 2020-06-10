@@ -6,7 +6,7 @@
 
     <utility
         component=".contract_status.ContractStatusFactory"
-        name="ocds.contenttypes.ContractStatus"
+        name="ocds.ContractStatus"
     />
 
 

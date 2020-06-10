@@ -28,6 +28,7 @@ class ProcurementCategory(object):
             VocabItem(u'goods', _(u'Goods')),
             VocabItem(u'works', _(u'Works')),
             VocabItem(u'services', _(u'Services')),
+            VocabItem(u'consultingServices', _(u'Consulting Services')),
         ]
 
         # Fix context if you are using the vocabulary in DataGridField.
