@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from ocds.contenttypes.content.modification import IModification  # NOQA E501
+from ocds.contenttypes.content.contracting_process import IContractingProcess  # NOQA E501
 from ocds.contenttypes.testing import OCDS_CONTENTTYPES_INTEGRATION_TESTING  # noqa
 from plone import api
 from plone.api.exc import InvalidParameterError
@@ -14,7 +14,7 @@ import unittest
 
 
 
-class ModificationIntegrationTest(unittest.TestCase):
+class ContractingProcessIntegrationTest(unittest.TestCase):
 
     layer = OCDS_CONTENTTYPES_INTEGRATION_TESTING
 
@@ -24,73 +24,73 @@ class ModificationIntegrationTest(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         portal_types = self.portal.portal_types
         parent_id = portal_types.constructContent(
-            'ContractingProcess',
+            'Infrastructure Project',
             self.portal,
             'parent_container',
             title='Parent container',
         )
         self.parent = self.portal[parent_id]
 
-    def test_ct_modification_schema(self):
-        fti = queryUtility(IDexterityFTI, name='Modification')
+    def test_ct_contracting_process_schema(self):
+        fti = queryUtility(IDexterityFTI, name='ContractingProcess')
         schema = fti.lookupSchema()
-        self.assertEqual(IModification, schema)
+        self.assertEqual(IContractingProcess, schema)
 
-    def test_ct_modification_fti(self):
-        fti = queryUtility(IDexterityFTI, name='Modification')
+    def test_ct_contracting_process_fti(self):
+        fti = queryUtility(IDexterityFTI, name='ContractingProcess')
         self.assertTrue(fti)
 
-    def test_ct_modification_factory(self):
-        fti = queryUtility(IDexterityFTI, name='Modification')
+    def test_ct_contracting_process_factory(self):
+        fti = queryUtility(IDexterityFTI, name='ContractingProcess')
         factory = fti.factory
         obj = createObject(factory)
 
         self.assertTrue(
-            IModification.providedBy(obj),
-            u'IModification not provided by {0}!'.format(
+            IContractingProcess.providedBy(obj),
+            u'IContractingProcess not provided by {0}!'.format(
                 obj,
             ),
         )
 
-    def test_ct_modification_adding(self):
+    def test_ct_contracting_process_adding(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
         obj = api.content.create(
             container=self.parent,
-            type='Modification',
-            id='modification',
+            type='ContractingProcess',
+            id='contracting_process',
         )
 
         self.assertTrue(
-            IModification.providedBy(obj),
-            u'IModification not provided by {0}!'.format(
+            IContractingProcess.providedBy(obj),
+            u'IContractingProcess not provided by {0}!'.format(
                 obj.id,
             ),
         )
 
         parent = obj.__parent__
-        self.assertIn('modification', parent.objectIds())
+        self.assertIn('contracting_process', parent.objectIds())
 
         # check that deleting the object works too
         api.content.delete(obj=obj)
-        self.assertNotIn('modification', parent.objectIds())
+        self.assertNotIn('contracting_process', parent.objectIds())
 
-    def test_ct_modification_globally_not_addable(self):
+    def test_ct_contracting_process_globally_not_addable(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
-        fti = queryUtility(IDexterityFTI, name='Modification')
+        fti = queryUtility(IDexterityFTI, name='ContractingProcess')
         self.assertFalse(
             fti.global_allow,
             u'{0} is globally addable!'.format(fti.id)
         )
 
-    def test_ct_modification_filter_content_type_true(self):
+    def test_ct_contracting_process_filter_content_type_true(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
-        fti = queryUtility(IDexterityFTI, name='Modification')
+        fti = queryUtility(IDexterityFTI, name='ContractingProcess')
         portal_types = self.portal.portal_types
         parent_id = portal_types.constructContent(
             fti.id,
             self.portal,
-            'modification_id',
-            title='Modification container',
+            'contracting_process_id',
+            title='ContractingProcess container',
          )
         self.parent = self.portal[parent_id]
         with self.assertRaises(InvalidParameterError):

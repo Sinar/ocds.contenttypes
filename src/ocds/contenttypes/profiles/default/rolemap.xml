@@ -19,6 +19,14 @@
     </permission>
 
 
+    <permission name="ocds.contenttypes: Add ContractingProcess" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+
+
     <permission name="ocds.contenttypes: Add InfrastructureProject" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>

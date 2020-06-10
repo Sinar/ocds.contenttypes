@@ -6,7 +6,7 @@
 
     <utility
         component=".modification_type.ModificationTypeFactory"
-        name="ocds.ModificationType"
+        name="ocds.contenttypes.ModificationType"
     />
 
 
