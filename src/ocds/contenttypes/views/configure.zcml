@@ -7,6 +7,14 @@
   -*- extra stuff goes here -*-
 
   <browser:page
+    name="contracting-process-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".contracting_process_view.ContractingProcessView"
+    template="contracting_process_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="infrastructure-project-view"
     for="Products.CMFCore.interfaces.IFolderish"
     class=".infrastructure_project_view.InfrastructureProjectView"
