@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="ocds.contenttypes.AddOcdsItem"
+        title="ocds.contenttypes: Add OcdsItem"
+    />
+
+
+    <permission
         id="ocds.contenttypes.AddTender"
         title="ocds.contenttypes: Add Tender"
     />

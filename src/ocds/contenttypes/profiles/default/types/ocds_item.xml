@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Award"
+    name="ocds item"
     meta_type="Dexterity FTI"
     i18n:domain="ocds.contenttypes">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Award</property>
+      name="title">ocds item</property>
   <property
       i18n:translate=""
-      name="description">OCDS Award</property>
+      name="description">The items block is used to list the line-items associated with a tender, award or contract.</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Award</property>
+  <property name="factory">ocds item</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
 
@@ -21,15 +21,17 @@
   <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
-    <element value="ocds item" />
-        <element value="OCDS Document" />
+  <!--
+    <element value="Document" />
+    <element value="File" />
+  -->
   </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">ocds.contenttypes.AddAward</property>
-  <property name="klass">ocds.contenttypes.content.award.Award</property>
+  <property name="add_permission">ocds.contenttypes.AddOcdsItem</property>
+  <property name="klass">ocds.contenttypes.content.ocds_item.OcdsItem</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">ocds.contenttypes.content.award.IAward</property>
+  <property name="schema">ocds.contenttypes.content.ocds_item.IOcdsItem</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
@@ -43,13 +45,14 @@
     <element value="plone.ownership"/>
     <element value="plone.publication"/>
     <element value="plone.categorization"/>
+    <element value="plone.basic"/>
     <element value="plone.locking" />
     <!--<element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />-->
     <!--<element value="plone.leadimage"/>-->
     <!--<element value="plone.relateditems"/>-->
     <!--<element value="plone.richtext"/>-->
     <!--<element value="plone.tableofcontents"/>-->
-    <element value="plone.versioning" />
+    <!--<element value="plone.versioning" />-->
     <!--<element value="plone.translatable" />-->
     <!--<element value="plone.nextprevioustoggle" />-->
     <!--<element value="plone.nextpreviousenabled" />-->
@@ -58,7 +61,7 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Award</property>
+  <property name="add_view_expr">string:${folder_url}/++add++ocds item</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>

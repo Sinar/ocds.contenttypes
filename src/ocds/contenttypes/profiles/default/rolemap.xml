@@ -3,6 +3,14 @@
   <permissions>
   <!-- -*- extra stuff goes here -*- -->
 
+    <permission name="ocds.contenttypes: Add OcdsItem" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+
+
     <permission name="ocds.contenttypes: Add Tender" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
