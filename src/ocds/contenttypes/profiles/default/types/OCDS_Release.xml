@@ -24,6 +24,7 @@
     <element value="Tender" />
         <element value="Award" />
         <element value="Source" /> 
+        <element value="OCDS Document" /> 
   <!--
     <element value="Document" />
     <element value="File" />
