@@ -239,6 +239,19 @@
           <p tal:content="structure
               view/w/completion_finalValue_details"></p>
 
+        <hr />
+
+        <h4>Subitems</h4>
+
+        <ul tal:repeat="item context/listFolderContents">
+            <li>
+                <a href=""
+                 tal:attributes="href item/getURL|item/absolute_url">
+                <span tal:replace="item/title"/></a> (<span
+                    tal:replace="item/portal_type" />)
+            </li>
+        </ul>
+
   <div tal:replace="structure provider:plone.belowcontentbody" />
 
   </metal:block>

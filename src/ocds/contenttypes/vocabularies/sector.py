@@ -35,7 +35,7 @@ class Sector(object):
                       _(u'Culture, sports and recreation')),
             VocabItem(u'transport', _(u'Transport')),
             VocabItem(u'transport.air', _(u'Air transport')),
-            VocabItem(u'transport.water', _(u'Water traansport')),
+            VocabItem(u'transport.water', _(u'Water transport')),
             VocabItem(u'transport.rail', _(u'Transport rail')),
             VocabItem(u'transport.road', _(u'Transport road')),
             VocabItem(u'transport.urban', _(u'Transport urban')),

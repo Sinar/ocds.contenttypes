@@ -54,6 +54,7 @@ class IInfrastructureProject(model.Schema):
     # status
     # https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectstatus
 
+    directives.widget(project_status=SelectFieldWidget)
     project_status = schema.Choice(
         title=_(u'Project Status'),
         description=_(u'''
@@ -101,6 +102,7 @@ class IInfrastructureProject(model.Schema):
     # Project Sector
     # https://standard.open-contracting.org/infrastructure/latest/en/reference/codelists/#projectsector
 
+    directives.widget(project_sector=SelectFieldWidget)
     project_sector = schema.Choice(
         title=_(u'Project Sector'),
         required=False,
@@ -117,6 +119,14 @@ class IInfrastructureProject(model.Schema):
 
     # project_type
 
+
+    directives.widget(project_sector=SelectFieldWidget)
+    project_sector = schema.Choice(
+        title=_(u'Project Sector'),
+        required=False,
+        vocabulary='ocds.sector',
+        )
+    directives.widget(project_type=SelectFieldWidget)
     project_type = schema.Choice(
         title=_(u'Project Type'),
         required=False,
