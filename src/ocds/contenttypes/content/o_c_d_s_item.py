@@ -13,13 +13,13 @@ from zope.interface import implementer
 # from ocds.contenttypes import _
 
 
-class IOcdsItem(model.Schema):
-    """ Marker interface and Dexterity Python Schema for OcdsItem
+class IOCDSItem(model.Schema):
+    """ Marker interface and Dexterity Python Schema for OCDSItem
     """
     # If you want, you can load a xml model created TTW here
     # and customize it in Python:
 
-    # model.load('ocds_item.xml')
+    # model.load('o_c_d_s_item.xml')
 
     # directives.widget(level=RadioFieldWidget)
     # level = schema.Choice(
@@ -57,7 +57,7 @@ class IOcdsItem(model.Schema):
     # )
 
 
-@implementer(IOcdsItem)
-class OcdsItem(Container):
+@implementer(IOCDSItem)
+class OCDSItem(Container):
     """
     """

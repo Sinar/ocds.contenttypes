@@ -4,7 +4,7 @@
 #
 # Run this robot test stand-alone:
 #
-#  $ bin/test -s ocds.contenttypes -t test_ocds_item.robot --all
+#  $ bin/test -s ocds.contenttypes -t test_o_c_d_s_item.robot --all
 #
 # Run this robot test with robot server (which is faster):
 #
@@ -14,7 +14,7 @@
 #
 # 2) Run robot tests:
 #
-# $ bin/robot /src/ocds/contenttypes/tests/robot/test_ocds_item.robot
+# $ bin/robot /src/ocds/contenttypes/tests/robot/test_o_c_d_s_item.robot
 #
 # See the http://docs.plone.org for further details (search for robot
 # framework).
@@ -34,18 +34,18 @@ Test Teardown  Close all browsers
 
 *** Test Cases ***************************************************************
 
-Scenario: As a site administrator I can add a ocds item
+Scenario: As a site administrator I can add a OCDS Item
   Given a logged-in site administrator
     and an add Award form
-   When I type 'My ocds item' into the title field
+   When I type 'My OCDS Item' into the title field
     and I submit the form
-   Then a ocds item with the title 'My ocds item' has been created
+   Then a OCDS Item with the title 'My OCDS Item' has been created
 
-Scenario: As a site administrator I can view a ocds item
+Scenario: As a site administrator I can view a OCDS Item
   Given a logged-in site administrator
-    and a ocds item 'My ocds item'
-   When I go to the ocds item view
-   Then I can see the ocds item title 'My ocds item'
+    and a OCDS Item 'My OCDS Item'
+   When I go to the OCDS Item view
+   Then I can see the OCDS Item title 'My OCDS Item'
 
 
 *** Keywords *****************************************************************
@@ -58,8 +58,8 @@ a logged-in site administrator
 an add Award form
   Go To  ${PLONE_URL}/++add++Award
 
-a ocds item 'My ocds item'
-  Create content  type=Award  id=my-ocds_item  title=My ocds item
+a OCDS Item 'My OCDS Item'
+  Create content  type=Award  id=my-o_c_d_s_item  title=My OCDS Item
 
 # --- WHEN -------------------------------------------------------------------
 
@@ -69,18 +69,18 @@ I type '${title}' into the title field
 I submit the form
   Click Button  Save
 
-I go to the ocds item view
-  Go To  ${PLONE_URL}/my-ocds_item
+I go to the OCDS Item view
+  Go To  ${PLONE_URL}/my-o_c_d_s_item
   Wait until page contains  Site Map
 
 
 # --- THEN -------------------------------------------------------------------
 
-a ocds item with the title '${title}' has been created
+a OCDS Item with the title '${title}' has been created
   Wait until page contains  Site Map
   Page should contain  ${title}
   Page should contain  Item created
 
-I can see the ocds item title '${title}'
+I can see the OCDS Item title '${title}'
   Wait until page contains  Site Map
   Page should contain  ${title}
