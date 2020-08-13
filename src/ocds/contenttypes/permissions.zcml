@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="ocds.contenttypes.AddAward"
+        title="ocds.contenttypes: Add Award"
+    />
+
+
+    <permission
         id="ocds.contenttypes.AddOCDSDocument"
         title="ocds.contenttypes: Add OCDSDocument"
     />
