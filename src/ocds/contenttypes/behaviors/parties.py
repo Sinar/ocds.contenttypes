@@ -36,7 +36,7 @@ class IParties(model.Schema):
     directives.widget('buyer',
                       RelatedItemsFieldWidget,
                       pattern_options={
-                        'basePath': '/',
+                        'basepath': '/',
                         'mode': 'auto',
                         'favourites': [],
                         }

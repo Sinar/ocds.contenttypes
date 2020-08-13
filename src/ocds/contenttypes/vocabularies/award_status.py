@@ -22,11 +22,15 @@ class AwardStatus(object):
     """
 
     def __call__(self, context):
-        # Just an example list of content for our vocabulary,
-        # this can be any static or dynamic data, a catalog result for example.
+        # An award moves through multiple states. Releases over time can update
+        # the status of an award.
+        # https://standard.open-contracting.org/latest/en/schema/codelists/#award-status
+
         items = [
-            VocabItem(u'sony-a7r-iii', _(u'Sony Aplha 7R III')),
-            VocabItem(u'canon-5d-iv', _(u'Canon 5D IV')),
+            VocabItem(u'pending', _(u'Pending')),
+            VocabItem(u'active', _(u'Active')),
+            VocabItem(u'cancelled', _(u'Cancelled')),
+            VocabItem(u'uncessfull', _(u'Unsuccessful')),
         ]
 
         # Fix context if you are using the vocabulary in DataGridField.

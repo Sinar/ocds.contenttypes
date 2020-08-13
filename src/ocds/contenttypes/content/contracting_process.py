@@ -126,7 +126,7 @@ class IContractingProcess(model.Schema):
         required=False,
         )
 
-    costEstimate_amount = schema.Decimal(
+    costEstimate_amount = schema.Float(
             title=_(u'Cost estimate'),
             description=_(u'Amount as a number'),
             required=False,
@@ -221,7 +221,7 @@ class IContractingProcess(model.Schema):
             required=False,
             )
 
-    contractValue_amount = schema.Decimal(
+    contractValue_amount = schema.Float(
             title=_(u'Contract value'),
             description=_(u'The initial value of the contract'),
             required=False,
@@ -263,7 +263,7 @@ class IContractingProcess(model.Schema):
             '''),
             required=False,)
 
-    finalValue_amount = schema.Decimal(
+    finalValue_amount = schema.Float(
             title=_(u'Final value'),
             description=_(u'''
             This should be provided when the contracting process is
