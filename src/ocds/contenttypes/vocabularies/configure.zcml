@@ -5,6 +5,12 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".award_status.AwardStatusFactory"
+        name="ocds.contenttypes.AwardStatus"
+    />
+
+
+    <utility
         component=".milestone_status.MilestoneStatusFactory"
         name="ocds.MilestoneStatus"
     />
