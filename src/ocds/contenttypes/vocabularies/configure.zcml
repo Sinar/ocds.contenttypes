@@ -5,6 +5,12 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <utility
+        component=".submission_method.SubmissionMethodFactory"
+        name="ocds.contenttypes.SubmissionMethod"
+    />
+
+
+    <utility
         component=".milestone_status.MilestoneStatusFactory"
         name="ocds.MilestoneStatus"
     />
