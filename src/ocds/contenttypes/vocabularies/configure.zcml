@@ -6,7 +6,7 @@
 
     <utility
         component=".submission_method.SubmissionMethodFactory"
-        name="ocds.contenttypes.SubmissionMethod"
+        name="ocds.SubmissionMethod"
     />
 
 

@@ -106,7 +106,7 @@ class ITender(model.Schema):
 
     directives.widget(tender_minValue_currency=SelectFieldWidget)
     tender_minValue_currency = schema.Choice(
-            title=u'Tender Value Currency',
+            title=u'Tender Minimum Value Currency',
             description=u'Currency of the minimum tender value',
             required=False,
             vocabulary='collective.vocabularies.iso.currencies',
@@ -197,7 +197,7 @@ class ITender(model.Schema):
         The methods by which bids are submitted
         '''),
         required=False,
-        vocabulary='ocds.submissionMethod',
+        vocabulary='ocds.SubmissionMethod',
         )
 
     dexteritytextindexer.searchable('submissionMethodDetails')
@@ -292,7 +292,7 @@ class ITender(model.Schema):
 
     # startDate
     awardPeriod_start = schema.Date(
-        title=_(u'Enquiry Start Date'),
+        title=_(u'Evaluation and Award Start Date'),
         description=_(u'''
         The start date for the period. When known, a precise start date
         must always be provided.
@@ -301,7 +301,7 @@ class ITender(model.Schema):
 
     # endDate
     awardPeriod_endDate = schema.Date(
-        title=_(u'Enquiry End Date'),
+        title=_(u'Evaluation and Award End Date'),
         description=_(u'''
         The end date for the period. When known, a precise end date must
         always be provided.
@@ -310,7 +310,7 @@ class ITender(model.Schema):
 
     # period_maxExtentDate
     awardPeriod_maxExtentDate = schema.Date(
-            title=_(u'Enquiry Maximum extent'),
+            title=_(u'Evaluation and Award Maximum extent'),
             description=_(u'''
             The period cannot be extended beyond this date. This field
             is optional, and can be used to express the maximum
