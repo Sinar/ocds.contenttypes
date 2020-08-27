@@ -9,6 +9,5 @@
   <object meta_type="Dexterity FTI" name="OCDS Document"/>
   <object meta_type="Dexterity FTI" name="Award"/>
   <object meta_type="Dexterity FTI" name="Tender"/>
-  <object meta_type="Dexterity FTI" name="ocds item"/>
   <object meta_type="Dexterity FTI" name="OCDS Item"/>
 </object>
