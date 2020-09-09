@@ -10,6 +10,16 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <plone:behavior
+        name="ocds.contenttypes.related_o_c_d_s_releases"
+        title="RelatedOCDSReleases"
+        description="Provides RelationList fields for OCDS Releases"
+        provides=".related_o_c_d_s_releases.IRelatedOCDSReleases"
+        factory=".related_o_c_d_s_releases.RelatedOCDSReleases"
+        marker=".related_o_c_d_s_releases.IRelatedOCDSReleasesMarker"
+        />
+
+
+    <plone:behavior
         name="ocds.contenttypes.document_type"
         title="DocumentType"
         description="OCDS Document Type Selection"
