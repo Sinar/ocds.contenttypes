@@ -10,6 +10,16 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <plone:behavior
+        name="ocds.contenttypes.related_awards"
+        title="RelatedAwards"
+        description="Provides related OCDS Awards field"
+        provides=".related_awards.IRelatedAwards"
+        factory=".related_awards.RelatedAwards"
+        marker=".related_awards.IRelatedAwardsMarker"
+        />
+
+
+    <plone:behavior
         name="ocds.contenttypes.related_o_c_d_s_releases"
         title="RelatedOCDSReleases"
         description="Provides RelationList fields for OCDS Releases"
