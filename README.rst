@@ -30,17 +30,6 @@ This add-on can be seen in action at the following sites:
 - https://politikus.sinarproject.org
 - https://hivos.sinarproject.org
 
-
-Documentation
--------------
-
-TODO
-
-Translations
-------------
-
-TODO
-
 Installation
 ------------
 
@@ -78,9 +67,14 @@ The project is licensed under the GPLv2.
 Credits
 -------
 
-This project is supported by Hivos East Africa, Nation Media Group.
-Indirectly via IDRC, Alternatives, (Montreal) and the kind individual
-contributors to Sinar Project.
+.. image:: https://sinarproject.org/media/hivos_logo-1.png/@@images/7485dd1c-7b0c-47a7-a940-d7966445764f.png
+    :alt: Hivos Logo
+.. image:: https://sinarproject.org/media/partner-logos/copy_of_od4d.png/@@images/a9c51168-cbba-4ee1-9978-bd7c43136657.png
+    :alt: Open Data for Development Logo
 
-Also this project would not be possible without the contributors to
-the Open Contracting Data Standard
+This project is funded and supported by Hivos East Africa, and
+indirectly via International Development Research Centre (IDRC) Canada.
+
+This project would not be possible without Open Contracting Data
+Standards https://standard.open-contracting.org/latest/en developed by
+the Open Contracting Partnership https://www.open-contracting.org/
