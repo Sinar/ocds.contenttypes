@@ -45,6 +45,9 @@ Install ocds.contenttypes by adding it to your buildout::
 
 and then running ``bin/buildout``
 
+It is recommended that this be installed automatically as part of a
+politikus buildout at https://github.com/Sinar/politikus
+
 
 Contribute
 ----------
