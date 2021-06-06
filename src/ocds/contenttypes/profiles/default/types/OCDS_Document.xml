@@ -47,6 +47,7 @@
     <!--<element value="plone.tableofcontents"/>-->
     <!--<element value="plone.versioning" />-->
     <!--<element value="plone.translatable" />-->
+    <element value="ocds.contenttypes.document_type" />
   </property>
 
   <!-- View information -->

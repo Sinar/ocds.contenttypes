@@ -222,6 +222,7 @@ class IParties(model.Schema):
             'parties',
             label=_(u'Parties'),
             fields=[
+                'administrativeEntity',
                 'buyer',
                 'procuringEntity',
                 'suppliers',
@@ -238,6 +239,16 @@ class IParties(model.Schema):
 class Parties(object):
     def __init__(self, context):
         self.context = context
+
+    @property
+    def administrativeEntity(self):
+        if safe_hasattr(self.context, 'administrativeEntity'):
+            return self.context.administrativeEntity
+        return None
+
+    @administrativeEntity.setter
+    def administrativeEntity(self, value):
+        self.context.administrativeEntity = value
 
     @property
     def buyer(self):
