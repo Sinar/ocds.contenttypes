@@ -12,7 +12,7 @@ from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from plone.app.vocabularies.catalog import CatalogSource
 from zope import schema
-from collective import dexteritytextindexer
+from plone.app.dexterity import textindexer
 from zope.interface import implementer
 
 
@@ -27,7 +27,7 @@ class ITender(model.Schema):
 
     # model.load('tender.xml')
 
-    dexteritytextindexer.searchable('title')
+    textindexer.searchable('title')
     title = schema.TextLine(
                 title=_(u'Title'),
                 description=_(u'''
@@ -37,7 +37,7 @@ class ITender(model.Schema):
                 '''),
                 required=True,
                 )
-    dexteritytextindexer.searchable('description')
+    textindexer.searchable('description')
     description = schema.Text(
                 title=_(u'Description'),
                 description=_(u'''
@@ -124,7 +124,7 @@ class ITender(model.Schema):
         vocabulary='ocds.Method',
         )
 
-    dexteritytextindexer.searchable('procurementMethodDetails')
+    textindexer.searchable('procurementMethodDetails')
     procurementMethodDetails = RichText(
         title=_(u'Procurement method details'),
         description=_(u'''
@@ -138,7 +138,7 @@ class ITender(model.Schema):
         required=False,
         )
 
-    dexteritytextindexer.searchable('procurementMethodRationale')
+    textindexer.searchable('procurementMethodRationale')
     procurementMethodRationale = RichText(
         title=_(u'Procurement method rationale'),
         description=_(u'''
@@ -181,7 +181,7 @@ class ITender(model.Schema):
         vocabulary='ocds.AwardCriteria',
         )
 
-    dexteritytextindexer.searchable('awardCriteriaDetails')
+    textindexer.searchable('awardCriteriaDetails')
     awardCriteriaDetails = RichText(
         title=_(u'Award criteria details'),
         description=_(u'''
@@ -200,7 +200,7 @@ class ITender(model.Schema):
         vocabulary='ocds.SubmissionMethod',
         )
 
-    dexteritytextindexer.searchable('submissionMethodDetails')
+    textindexer.searchable('submissionMethodDetails')
     awardCriteriaDetails = RichText(
         title=_(u'Submission method details'),
         description=_(u'''
@@ -279,7 +279,7 @@ class ITender(model.Schema):
             '''),
             required=False,)
 
-    dexteritytextindexer.searchable('elegibilityCriteria')
+    textindexer.searchable('elegibilityCriteria')
     elegibilityCriteria = RichText(
         title=_(u'Elegibility Criteria'),
         description=_(u'''

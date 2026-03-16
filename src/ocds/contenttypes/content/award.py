@@ -12,7 +12,7 @@ from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from plone.app.vocabularies.catalog import CatalogSource
 from zope import schema
-from collective import dexteritytextindexer
+from plone.app.dexterity import textindexer
 from zope.interface import implementer
 
 from ocds.contenttypes import _
@@ -26,7 +26,7 @@ class IAward(model.Schema):
 
     # model.load('award.xml')
 
-    dexteritytextindexer.searchable('title')
+    textindexer.searchable('title')
     title = schema.TextLine(
                 title=_(u'Title'),
                 description=_(u'''
@@ -34,7 +34,7 @@ class IAward(model.Schema):
                 '''),
                 required=True,
                 )
-    dexteritytextindexer.searchable('description')
+    textindexer.searchable('description')
     description = schema.Text(
                 title=_(u'Description'),
                 description=_(u'''

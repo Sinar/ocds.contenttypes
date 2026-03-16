@@ -8,7 +8,7 @@ from plone.supermodel import model
 from plone.app.z3cform.widget import SelectFieldWidget
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
-from collective import dexteritytextindexer
+from plone.app.dexterity import textindexer
 from zope.interface import implementer
 from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from z3c.relationfield.schema import RelationChoice
@@ -46,7 +46,7 @@ class IModification(model.Schema):
             required=False,
             )
 
-    dexteritytextindexer.searchable('title')
+    textindexer.searchable('title')
     title = schema.TextLine(
                 title=_(u'Title'),
                 description=_(u'''
@@ -54,7 +54,7 @@ class IModification(model.Schema):
                 '''),
                 required=True,
                 )
-    dexteritytextindexer.searchable('description')
+    textindexer.searchable('description')
     description = schema.Text(
                 title=_(u'Description'),
                 description=_(u'''

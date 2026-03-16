@@ -10,7 +10,6 @@ from zope.interface import Interface
 from zope.interface import implementer
 from zope.interface import provider
 from plone.supermodel.directives import fieldset
-from collective import dexteritytextindexer
 from plone.app.textfield import RichText
 from plone.autoform import directives
 from plone.app.z3cform.widget import RelatedItemsFieldWidget

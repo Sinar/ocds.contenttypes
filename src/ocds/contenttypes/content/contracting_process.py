@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from plone.app.textfield import RichText
-from collective import dexteritytextindexer
+from plone.app.dexterity import textindexer
 from plone.autoform import directives
 from plone.dexterity.content import Container
 # from plone.namedfile import field as namedfile
@@ -45,7 +45,7 @@ class IContractingProcess(model.Schema):
             required=False,
             )
 
-    dexteritytextindexer.searchable('title')
+    textindexer.searchable('title')
     title = schema.TextLine(
                 title=_(u'Title'),
                 description=_(u'''
@@ -54,7 +54,7 @@ class IContractingProcess(model.Schema):
                 '''),
                 required=True,
                 )
-    dexteritytextindexer.searchable('description')
+    textindexer.searchable('description')
     description = schema.Text(
                 title=_(u'Description'),
                 description=_(u'''

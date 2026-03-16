@@ -9,7 +9,7 @@ from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.supermodel.directives import fieldset
-from collective import dexteritytextindexer
+from plone.app.dexterity import textindexer
 
 # from z3c.form.browser.radio import RadioFieldWidget
 # from zope import schema
@@ -28,7 +28,7 @@ class IOCDSRelease(model.Schema):
     #     required=True
     # )
 
-    dexteritytextindexer.searchable('notes')
+    textindexer.searchable('notes')
     notes = RichText(
          title=_(u'Notes'),
          description=_(u'''

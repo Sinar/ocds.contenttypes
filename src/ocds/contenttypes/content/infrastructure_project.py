@@ -2,7 +2,7 @@
 from plone.app.textfield import RichText
 from plone.autoform import directives
 from plone.dexterity.content import Container
-from collective import dexteritytextindexer
+from plone.app.dexterity import textindexer
 # from plone.namedfile import field as namedfile
 from plone.supermodel import model
 from plone.supermodel.directives import fieldset
@@ -23,7 +23,7 @@ class IInfrastructureProject(model.Schema):
 
     # model.load('infrastructure_project.xml')
 
-    dexteritytextindexer.searchable('title')
+    textindexer.searchable('title')
     title = schema.TextLine(
                 title=_(u'Title'),
                 description=_(u'''
@@ -31,7 +31,7 @@ class IInfrastructureProject(model.Schema):
                 '''),
                 required=True,
                 )
-    dexteritytextindexer.searchable('description')
+    textindexer.searchable('description')
     description = schema.Text(
                 title=_(u'Description'),
                 description=_(u'''

@@ -6,7 +6,7 @@ from plone.dexterity.content import Container
 from plone.supermodel import model
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
-from collective import dexteritytextindexer
+from plone.app.dexterity import textindexer
 from zope import schema
 from zope.interface import implementer
 
@@ -22,7 +22,7 @@ class IOCDSItem(model.Schema):
 
     # model.load('o_c_d_s_item.xml')
     
-    dexteritytextindexer.searchable('title')
+    textindexer.searchable('title')
     title = schema.TextLine(
                 title=_(u'Title'),
                 description=_(u'''
@@ -30,7 +30,7 @@ class IOCDSItem(model.Schema):
                 '''),
                 required=True,
                 )
-    dexteritytextindexer.searchable('description')
+    textindexer.searchable('description')
     description = schema.Text(
                 title=_(u'Description'),
                 description=_(u'''
