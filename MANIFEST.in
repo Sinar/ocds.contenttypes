@@ -1,4 +1,0 @@
-graft src/ocds
-graft docs
-include *.rst
-global-exclude *.pyc

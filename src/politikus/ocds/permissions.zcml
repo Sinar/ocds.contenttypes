@@ -1,0 +1,66 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="plone">
+
+  <configure zcml:condition="installed AccessControl.security">
+  <!-- -*- extra stuff goes here -*- -->
+
+    <permission
+        id="politikus.ocds.AddOCDSItem"
+        title="politikus.ocds: Add OCDSItem"
+    />
+
+
+    <permission
+        id="politikus.ocds.AddOcdsItem"
+        title="politikus.ocds: Add OcdsItem"
+    />
+
+
+    <permission
+        id="politikus.ocds.AddTender"
+        title="politikus.ocds: Add Tender"
+    />
+
+
+    <permission
+        id="politikus.ocds.AddAward"
+        title="politikus.ocds: Add Award"
+    />
+
+
+    <permission
+        id="politikus.ocds.AddOCDSDocument"
+        title="politikus.ocds: Add OCDSDocument"
+    />
+
+
+    <permission
+        id="politikus.ocds.AddContractingProcess"
+        title="politikus.ocds: Add ContractingProcess"
+    />
+
+
+    <permission
+        id="politikus.ocds.AddModification"
+        title="politikus.ocds: Add Modification"
+    />
+
+
+    <permission
+        id="politikus.ocds.AddInfrastructureProject"
+        title="politikus.ocds: Add InfrastructureProject"
+    />
+
+
+    <permission
+        id="politikus.ocds.AddOCDSRelease"
+        title="politikus.ocds: Add OCDSRelease"
+    />
+
+
+
+  </configure>
+
+</configure>

@@ -1,0 +1,34 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="politikus.ocds">
+
+  -*- extra stuff goes here -*-
+
+  <browser:page
+    name="contracting-process-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".contracting_process_view.ContractingProcessView"
+    template="contracting_process_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="infrastructure-project-view"
+    for="Products.CMFCore.interfaces.IFolderish"
+    class=".infrastructure_project_view.InfrastructureProjectView"
+    template="infrastructure_project_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="ocds-release-view"
+    for="politikus.ocds.content.o_c_d_s_release.IOCDSRelease"
+    class=".o_c_d_s_release_view.OCDSReleaseView"
+    template="ocds-release-view.pt"
+    permission="zope2.View"
+    />
+
+
+</configure>

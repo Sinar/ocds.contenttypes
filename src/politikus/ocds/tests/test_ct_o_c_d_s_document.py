@@ -1,0 +1,73 @@
+# -*- coding: utf-8 -*-
+from politikus.ocds.testing import POLITIKUS_OCDS_INTEGRATION_TESTING  # noqa
+from plone import api
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.dexterity.interfaces import IDexterityFTI
+from zope.component import createObject
+from zope.component import queryUtility
+
+import unittest
+
+
+class OCDSDocumentIntegrationTest(unittest.TestCase):
+
+    layer = POLITIKUS_OCDS_INTEGRATION_TESTING
+
+    def setUp(self):
+        """Custom shared utility setup for tests."""
+        self.portal = self.layer['portal']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        portal_types = self.portal.portal_types
+        parent_id = portal_types.constructContent(
+            'Infrastructure Project',
+            self.portal,
+            'parent_container',
+            title='Parent container',
+        )
+        self.parent = self.portal[parent_id]
+
+    def test_ct_o_c_d_s_document_schema(self):
+        fti = queryUtility(IDexterityFTI, name='OCDS Document')
+        schema = fti.lookupSchema()
+        # The FTI has no explicit schema, so dexterity generates one at
+        # install time; its name has a variable prefix, only the suffix
+        # derived from the portal type is stable.
+        self.assertTrue(
+            schema.getName().endswith('0_OCDS_1_Document'),
+            u'unexpected schema name: {0}'.format(schema.getName()),
+        )
+
+    def test_ct_o_c_d_s_document_fti(self):
+        fti = queryUtility(IDexterityFTI, name='OCDS Document')
+        self.assertTrue(fti)
+
+    def test_ct_o_c_d_s_document_factory(self):
+        fti = queryUtility(IDexterityFTI, name='OCDS Document')
+        factory = fti.factory
+        obj = createObject(factory)
+
+
+    def test_ct_o_c_d_s_document_adding(self):
+        setRoles(self.portal, TEST_USER_ID, ['Contributor'])
+        obj = api.content.create(
+            container=self.parent,
+            type='OCDS Document',
+            id='o_c_d_s_document',
+        )
+
+
+        parent = obj.__parent__
+        self.assertIn('o_c_d_s_document', parent.objectIds())
+
+        # check that deleting the object works too
+        api.content.delete(obj=obj)
+        self.assertNotIn('o_c_d_s_document', parent.objectIds())
+
+    def test_ct_o_c_d_s_document_globally_not_addable(self):
+        setRoles(self.portal, TEST_USER_ID, ['Contributor'])
+        fti = queryUtility(IDexterityFTI, name='OCDS Document')
+        self.assertFalse(
+            fti.global_allow,
+            u'{0} is globally addable!'.format(fti.id)
+        )

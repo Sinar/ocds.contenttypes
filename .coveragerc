@@ -1,6 +1,0 @@
-[report]
-include =
-    src/ocds/*
-omit =
-    */test*
-    */upgrades/*

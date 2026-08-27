@@ -1,5 +1,0 @@
-=================
-ocds.contenttypes
-=================
-
-User documentation

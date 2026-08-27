@@ -1,0 +1,39 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="politikus.ocds">
+
+  -*- extra stuff goes here -*-
+
+  <browser:viewlet
+     name="document-type-viewlet"
+     for="politikus.ocds.behaviors.document_type.IDocumentTypeMarker"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+     layer="politikus.ocds.interfaces.IPolitikusOcdsLayer"
+     class=".document_type_viewlet.DocumentTypeViewlet"
+     template="document-type-viewlet.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
+     name="parties-viewlet"
+     for="politikus.popolo.content.person.IPerson"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+     layer="politikus.ocds.interfaces.IPolitikusOcdsLayer"
+     class=".parties_viewlet.PartiesViewlet"
+     template="parties-viewlet.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
+     name="parties-viewlet"
+     for="politikus.popolo.content.organization.IOrganization"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+     layer="politikus.ocds.interfaces.IPolitikusOcdsLayer"
+     class=".parties_viewlet.PartiesViewlet"
+     template="parties-viewlet.pt"
+     permission="zope2.View"
+     />
+
+</configure>

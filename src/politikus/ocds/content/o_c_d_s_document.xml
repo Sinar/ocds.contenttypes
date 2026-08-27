@@ -1,0 +1,26 @@
+<model
+    xmlns="http://namespaces.plone.org/supermodel/schema"
+    xmlns:indexer="http://namespaces.plone.org/supermodel/indexer" 
+    xmlns:security="http://namespaces.plone.org/supermodel/security"
+    xmlns:lingua="http://namespaces.plone.org/supermodel/lingua"
+    xmlns:form="http://namespaces.plone.org/supermodel/form"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+    i18n:domain="politikus.ocds">
+  <schema>
+    <field name="title" type="zope.schema.TextLine">
+      <description/>
+      <required>False</required>
+      <title i18n:translate="">Title</title>
+    </field>
+    <field name="description" type="zope.schema.Text">
+      <description/>
+      <required>False</required>
+      <title i18n:translate="">Description</title>
+    </field>
+    <field name="file" type="plone.namedfile.field.NamedBlobFile" marshal:primary="true">
+      <description/>
+      <title i18n:translate="label_file">File</title>
+    </field>
+  </schema>
+</model>
