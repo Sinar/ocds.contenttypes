@@ -54,7 +54,7 @@ setup(
         'plone.api>=1.8.4',
         'plone.restapi',
         'plone.app.dexterity',
-        'popolo.contenttypes',
+        'politikus.popolo',
     ],
     extras_require={
         'test': [
