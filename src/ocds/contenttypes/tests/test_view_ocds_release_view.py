@@ -5,8 +5,11 @@ from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from zope.component import getMultiAdapter
-from zope.component.interfaces import ComponentLookupError
+from zope.interface.interfaces import ComponentLookupError
 
+from zope.interface import alsoProvides
+
+from ocds.contenttypes.content.o_c_d_s_release import IOCDSRelease
 import unittest
 
 
@@ -21,6 +24,7 @@ class ViewsIntegrationTest(unittest.TestCase):
         api.content.create(self.portal, 'Document', 'front-page')
 
     def test_ocds_release_view_is_registered(self):
+        alsoProvides(self.portal['other-folder'], IOCDSRelease)
         view = getMultiAdapter(
             (self.portal['other-folder'], self.portal.REQUEST),
             name='ocds-release-view'

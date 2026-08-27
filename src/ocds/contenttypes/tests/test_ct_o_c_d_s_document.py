@@ -10,13 +10,6 @@ from zope.component import queryUtility
 import unittest
 
 
-try:
-    from plone.dexterity.schema import portalTypeToSchemaName
-except ImportError:
-    # Plone < 5
-    from plone.dexterity.utils import portalTypeToSchemaName
-
-
 class OCDSDocumentIntegrationTest(unittest.TestCase):
 
     layer = OCDS_CONTENTTYPES_INTEGRATION_TESTING
@@ -37,8 +30,13 @@ class OCDSDocumentIntegrationTest(unittest.TestCase):
     def test_ct_o_c_d_s_document_schema(self):
         fti = queryUtility(IDexterityFTI, name='OCDS Document')
         schema = fti.lookupSchema()
-        schema_name = portalTypeToSchemaName('OCDS Document')
-        self.assertEqual(schema_name, schema.getName())
+        # The FTI has no explicit schema, so dexterity generates one at
+        # install time; its name has a variable prefix, only the suffix
+        # derived from the portal type is stable.
+        self.assertTrue(
+            schema.getName().endswith('0_OCDS_1_Document'),
+            u'unexpected schema name: {0}'.format(schema.getName()),
+        )
 
     def test_ct_o_c_d_s_document_fti(self):
         fti = queryUtility(IDexterityFTI, name='OCDS Document')

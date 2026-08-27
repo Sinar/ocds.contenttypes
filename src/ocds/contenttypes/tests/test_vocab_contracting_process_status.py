@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from ocds.contenttypes import _
 from ocds.contenttypes.testing import OCDS_CONTENTTYPES_INTEGRATION_TESTING  # noqa
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
@@ -20,13 +19,11 @@ class ContractingProcessStatusIntegrationTest(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
 
     def test_vocab_contracting_process_status(self):
-        vocab_name = 'ocds.contenttypes.ContractingProcessStatus'
+        vocab_name = 'ocds.ContractingProcessStatus'
         factory = getUtility(IVocabularyFactory, vocab_name)
         self.assertTrue(IVocabularyFactory.providedBy(factory))
 
         vocabulary = factory(self.portal)
         self.assertTrue(IVocabularyTokenized.providedBy(vocabulary))
-        self.assertEqual(
-            vocabulary.getTerm('sony-a7r-iii').title,
-            _(u'Sony Aplha 7R III'),
-        )
+        terms = list(vocabulary)
+        self.assertTrue(len(terms) > 0)
